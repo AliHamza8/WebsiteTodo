@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap.min.css">
     <title>Todo App</title>
 </head>
+<style>
+    body {
+        font-family: 'Playfair Display', serif;
+    }
+</style>
 <body>
 
     <div class="container-fluid bg-primary py-3">
         <h1 class="text-center text-white">Website Todo</h1>
+    </div>
+    <div class="container border border-primary mt-5 p-3">
+        <div class="form-group d-flex justify-content-center align-items-center">
+            <input type="text" class="form-control w-50 " placeholder="Create a new task...">
+            <button class="btn btn-primary ms-1">✔</button>
+        </div>
+        <ul class="list-group mt-5 p-3 justify-content-center align-items-center">
+            <li class="list-group-item py-1 px-3 w-50">Track your source code</li>
+            <button class="btn btn-warning btn-sm">🖍</button>
+        </ul>
     </div>
 
     <script src="script.js"></script>
