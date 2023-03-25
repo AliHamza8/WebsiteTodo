@@ -8,7 +8,10 @@ let textBox = document.querySelector('.textbox')
 
 //Adding new list item and edit delete buttons
 btnAdd.addEventListener('click', function () {
-    //creating list item
+    if (textBox.value === '')
+    alert('Enter something...')
+    else {
+         //creating list item
     let newLiEl = document.createElement('li')
     let addLiText = document.createTextNode(textBox.value)
     newLiEl.appendChild(addLiText)
@@ -16,8 +19,7 @@ btnAdd.addEventListener('click', function () {
 
     //adding classes to list item
     newLiEl.classList.add('list-group-item')
-    newLiEl.classList.add('my-1', 'mx-3','w-50')
-
+    newLiEl.classList.add('my-1', 'mx-3','w-50', 'h6')
 
     //creating buttons section
     let newDivEl = document.createElement('div')
@@ -34,13 +36,16 @@ btnAdd.addEventListener('click', function () {
 
     //creating Delete button
     let newDeleteBtn = document.createElement('button')
-    let DeleteBtnText = document.createTextNode('Delete')
-    newDeleteBtn.appendChild(DeleteBtnText)
+    let deleteBtnText = document.createTextNode('Delete')
+    newDeleteBtn.appendChild(deleteBtnText)
     newDivEl.appendChild(newDeleteBtn)
     // adding classes to update button
-    newDeleteBtn.classList.add('btn', 'danger', 'btn-sm', 'mt-2', 'ms-2')    
+    newDeleteBtn.classList.add('btn', 'btn-danger', 'btn-sm', 'mt-2', 'ms-2')    
 
-    let addDivText = document.createTextNode(newUpdateBtn + DeleteBtnText)
-    newDivEl.appendChild(addDivText)
+    //appending update and delete buttons to new div
+    newDivEl.appendChild(newUpdateBtn)
+    newDivEl.appendChild(newDeleteBtn)
     ul.appendChild(newDivEl)
+    textBox.value = ''   
+    }
 })
